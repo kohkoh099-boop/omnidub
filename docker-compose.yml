@@ -1,0 +1,19 @@
+services:
+  omnidub:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    image: omnidub:latest
+    container_name: omnidub
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      OMNIDUB_WORKDIR: /data
+      PORT: "8080"
+    ports:
+      - "${HOST_PORT:-8080}:8080"
+    volumes:
+      - omnidub-data:/data
+
+volumes:
+  omnidub-data:
