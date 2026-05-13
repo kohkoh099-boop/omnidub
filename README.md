@@ -30,7 +30,9 @@ OmniDub fixes all three by exploiting capabilities that are unique to the MiMo-V
 
 ## Demo
 
-![screenshot](docs/hero.png)
+**▶️ [Watch the 62-second demo video](https://kohkoh099-boop.github.io/omnidub/#demo)** — see the full pipeline end-to-end.
+
+![screenshot](docs/assets/omnidub_demo.mp4)
 
 Upload a clip → pick target language → wait ~1× realtime → download. That's it.
 

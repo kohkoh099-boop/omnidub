@@ -102,6 +102,29 @@ h1{
 }
 .btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
 
+/* Hero embedded video (autoplay loop) */
+.hero-video{
+  max-width:880px;margin:0 auto 40px;
+  border-radius:18px;overflow:hidden;
+  border:1px solid var(--border);
+  box-shadow:0 30px 60px -25px rgba(0,0,0,.6);
+  background:#000;
+}
+.hero-video video{display:block;width:100%;height:auto}
+
+/* Full-size demo player + caption */
+.video-frame{
+  max-width:960px;margin:0 auto;
+  background:var(--card);border:1px solid var(--border);border-radius:16px;
+  padding:12px;box-shadow:0 20px 40px -20px rgba(0,0,0,.5)
+}
+.video-frame video{
+  display:block;width:100%;height:auto;border-radius:10px;background:#000
+}
+.video-frame .caption{
+  margin:12px 4px 4px;color:var(--muted);font-size:13px;text-align:center
+}
+
 /* Hero visual — pipeline lanes */
 .hero-visual{
   margin:0 auto;max-width:780px;

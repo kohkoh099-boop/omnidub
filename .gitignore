@@ -10,9 +10,13 @@ venv/
 .env
 .env.local
 
-# Job storage
+# Job storage + intermediate artifacts
 /tmp/omnidub/
 apps/api/tmp/
+samples/_job/
+samples/timeline.json
+samples/dubbed_zh_tg.mp4
+docs/assets/ui_walkthrough.webm
 
 # macOS / editors
 .DS_Store

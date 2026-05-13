@@ -70,6 +70,13 @@
     <a class="btn-secondary" href="#demo">See it in action</a>
   </div>
 
+  <!-- auto-playing hero demo video -->
+  <div class="hero-video">
+    <video autoplay muted loop playsinline preload="metadata" poster="assets/og.png">
+      <source src="assets/omnidub_demo.mp4" type="video/mp4">
+    </video>
+  </div>
+
   <div class="hero-visual" role="img" aria-label="Pipeline preview">
     <div class="lane" style="--i:0">
       <div class="chip">Source MP4</div>
@@ -165,9 +172,17 @@
 <!-- DEMO -->
 <section id="demo" class="section">
   <div class="kicker">Demo</div>
-  <h2>Upload → pick language → download. That's it.</h2>
+  <h2>See the pipeline end-to-end. 62 seconds.</h2>
 
-  <div class="screens">
+  <div class="video-frame">
+    <video controls playsinline preload="metadata" poster="assets/og.png">
+      <source src="assets/omnidub_demo.mp4" type="video/mp4">
+      Your browser can't play MP4 inline. <a href="assets/omnidub_demo.mp4">Download the demo</a>.
+    </video>
+    <p class="caption">Source: two-speaker English clip &middot; Target: Mandarin 中文 &middot; Voice cloned per speaker</p>
+  </div>
+
+  <div class="screens" style="margin-top:40px">
     <figure>
       <div class="screen">
         <div class="screen-hdr">
