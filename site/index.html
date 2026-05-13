@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#0b0d12" />
+<title>OmniDub — Emotion-aware video dubbing · Powered by Xiaomi MiMo-V2.5</title>
+<meta name="description" content="Upload a video, pick a target language, get back a dub where every speaker keeps their voice, their emotion, and the original timing. Open source, MIT, one-command install.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="OmniDub — Emotion-aware video dubbing">
+<meta property="og:description" content="Every speaker keeps their voice, their emotion, and the original timing. Powered by Xiaomi MiMo-V2.5.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23ff6b35'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%230b0d12'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="brand" href="#top">
+    <span class="logo">◎</span>
+    <span>OmniDub</span>
+  </a>
+  <div class="navlinks">
+    <a href="#how">How it works</a>
+    <a href="#demo">Demo</a>
+    <a href="#install">Install</a>
+    <a href="#mimo">Why MiMo</a>
+    <a class="btn-ghost" href="https://github.com/kohkoh099-boop/omnidub" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.38-3.88-1.38-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.27-5.23-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18.92-.26 1.91-.38 2.9-.39.98.01 1.98.13 2.9.39 2.2-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.42-2.69 5.39-5.25 5.67.41.35.78 1.05.78 2.12v3.14c0 .31.21.67.8.56C20.22 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+      GitHub
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="top" class="hero">
+  <div class="badge-row">
+    <a class="badge" href="https://100t.xiaomimimo.com" target="_blank" rel="noopener">
+      <span class="dot"></span> Built for Xiaomi MiMo Orbit 100T
+    </a>
+    <a class="badge ghost" href="https://github.com/kohkoh099-boop/omnidub" target="_blank" rel="noopener">
+      MIT · Open source ↗
+    </a>
+  </div>
+
+  <h1>
+    Dub any video,<br>
+    <span class="grad">without losing the soul of it.</span>
+  </h1>
+
+  <p class="lede">
+    OmniDub rebuilds a video's dialogue in any language while every speaker
+    keeps their voice, their emotion, and the original timing —
+    powered entirely by <b>Xiaomi MiMo-V2.5</b>.
+  </p>
+
+  <div class="cta-row">
+    <a class="btn-primary" href="#install">
+      <span>Get it running</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14m-6-7l7 7-7 7"/></svg>
+    </a>
+    <a class="btn-secondary" href="#demo">See it in action</a>
+  </div>
+
+  <div class="hero-visual" role="img" aria-label="Pipeline preview">
+    <div class="lane" style="--i:0">
+      <div class="chip">Source MP4</div>
+      <div class="wave"></div>
+    </div>
+    <div class="lane" style="--i:1">
+      <div class="chip chip-mimo">mimo-v2.5</div>
+      <div class="bar"><span>ASR + diarize</span></div>
+    </div>
+    <div class="lane" style="--i:2">
+      <div class="chip chip-mimo">mimo-v2.5</div>
+      <div class="bar"><span>emotion tag · <em>angry / whispering / sighing</em></span></div>
+    </div>
+    <div class="lane" style="--i:3">
+      <div class="chip chip-mimo">mimo-v2.5-pro</div>
+      <div class="bar"><span>timing-aware translator · retry ≤3×</span></div>
+    </div>
+    <div class="lane" style="--i:4">
+      <div class="chip chip-mimo">mimo-v2.5-tts-voiceclone</div>
+      <div class="bar"><span>per-speaker TTS</span></div>
+    </div>
+    <div class="lane" style="--i:5">
+      <div class="chip">Dubbed MP4</div>
+      <div class="wave wave-out"></div>
+    </div>
+  </div>
+</header>
+
+<!-- PROBLEM -->
+<section class="section">
+  <div class="kicker">The problem</div>
+  <h2>Auto-dubbing today loses three things.</h2>
+  <div class="grid3">
+    <div class="card">
+      <div class="icon">😐</div>
+      <h3>Emotion</h3>
+      <p>The speaker is shouting, crying, whispering. The dub comes out flat like a news anchor reading a weather report.</p>
+    </div>
+    <div class="card">
+      <div class="icon">👥</div>
+      <h3>Voice identity</h3>
+      <p>Three speakers in the video? All three collapse into the same AI narrator. Viewers can't tell who's talking.</p>
+    </div>
+    <div class="card">
+      <div class="icon">⏱️</div>
+      <h3>Timing</h3>
+      <p>Translated line runs 30% longer than the original shot, so the dub talks right over the next cut. Unwatchable.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section id="how" class="section dark">
+  <div class="kicker">How OmniDub fixes it</div>
+  <h2>Every problem maps to a MiMo-V2.5 capability.</h2>
+
+  <div class="solution">
+    <div class="sol-row">
+      <div class="sol-num">01</div>
+      <div class="sol-body">
+        <h3>Emotion preserved</h3>
+        <p>For every sentence, MiMo-V2.5 <b>video-understanding</b> inspects a frame strip and classifies the delivery as <code>(angry)</code>, <code>(whispering)</code>, <code>(sighing)</code>, and so on. That tag is injected inline into the TTS prompt using MiMo's native natural-language control syntax.</p>
+        <p class="foot">Uses <span class="tag">mimo-v2.5</span> + <span class="tag">mimo-v2.5-tts</span></p>
+      </div>
+    </div>
+    <div class="sol-row">
+      <div class="sol-num">02</div>
+      <div class="sol-body">
+        <h3>Voice identity preserved</h3>
+        <p>The longest clean clip of each speaker is extracted, base64-encoded, and passed as that speaker's voice handle to voice cloning. Three speakers in = three distinct voices out, each matching the timbre and cadence of the original.</p>
+        <p class="foot">Uses <span class="tag">mimo-v2.5-tts-voiceclone</span></p>
+      </div>
+    </div>
+    <div class="sol-row">
+      <div class="sol-num">03</div>
+      <div class="sol-body">
+        <h3>Timing preserved</h3>
+        <p>The reasoning model translates each line with the target clip duration as a hard constraint. If the first draft would be too long, it explicitly reasons — "shorten by dropping 'you know'" — and iterates up to three times until it fits the original shot ±8%.</p>
+        <p class="foot">Uses <span class="tag">mimo-v2.5-pro</span></p>
+      </div>
+    </div>
+    <div class="sol-row">
+      <div class="sol-num">04</div>
+      <div class="sol-body">
+        <h3>Lip-shape aware</h3>
+        <p>When the speaker's mouth is open on an "O" shape, the translator is told to prefer Indonesian/Chinese syllables with matching vowels at that time index. The dub doesn't perfectly lip-sync — no one's does — but it stops looking obviously wrong.</p>
+        <p class="foot">Uses <span class="tag">mimo-v2.5</span> vision + <span class="tag">mimo-v2.5-pro</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO -->
+<section id="demo" class="section">
+  <div class="kicker">Demo</div>
+  <h2>Upload → pick language → download. That's it.</h2>
+
+  <div class="screens">
+    <figure>
+      <div class="screen">
+        <div class="screen-hdr">
+          <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+          <span class="url">omnidub.local</span>
+        </div>
+        <div class="screen-body">
+          <div class="sh2">1 · Drop a video</div>
+          <div class="mock-drop">
+            <span>⇪</span>
+            <div>
+              <b>clip_interview.mp4</b>
+              <small>12.8 MB · 01:42</small>
+            </div>
+          </div>
+          <div class="sh2">2 · Target language</div>
+          <div class="mock-chips">
+            <span>🇮🇩 Indonesia</span>
+            <span class="on">🇨🇳 中文</span>
+            <span>🇬🇧 English</span>
+            <span>🇯🇵 日本語</span>
+          </div>
+          <div class="sh2">3 · Voice</div>
+          <div class="mock-chips">
+            <span class="on">🧬 Clone each speaker</span>
+            <span>🎙️ Built-in</span>
+          </div>
+          <button class="mock-cta">Dub it →</button>
+        </div>
+      </div>
+      <figcaption>Single-page UI, designed mobile-first — one thumb, no dropdowns.</figcaption>
+    </figure>
+
+    <figure>
+      <div class="screen">
+        <div class="screen-hdr">
+          <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+          <span class="url">omnidub.local · processing</span>
+        </div>
+        <div class="screen-body">
+          <div class="sh2">Dubbing in progress</div>
+          <ol class="mock-steps">
+            <li class="done">Extracting audio</li>
+            <li class="done">Transcribing + diarizing <span class="pill">mimo-v2.5</span></li>
+            <li class="done">Fingerprinting speakers <span class="pill">voiceclone</span></li>
+            <li class="done">Tagging emotion per line <span class="pill">mimo-v2.5</span></li>
+            <li class="active">Timing-aware translation <span class="pill">mimo-v2.5-pro</span></li>
+            <li>Rendering voice <span class="pill">mimo-v2.5-tts</span></li>
+            <li>Muxing MP4</li>
+          </ol>
+        </div>
+      </div>
+      <figcaption>Real-time progress over Server-Sent Events — you see every MiMo call as it happens.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- INSTALL -->
+<section id="install" class="section dark">
+  <div class="kicker">Install</div>
+  <h2>One command. Two minutes.</h2>
+
+  <div class="install-row">
+    <ol class="steps">
+      <li>
+        <b>Grab a MiMo API key</b>
+        <p>Sign up at <a href="https://platform.xiaomimimo.com" target="_blank" rel="noopener">platform.xiaomimimo.com</a>. Token Plan subscribers get preferential rates and a full Credits reset each month.</p>
+      </li>
+      <li>
+        <b>Clone & configure</b>
+<pre><code>git clone https://github.com/kohkoh099-boop/omnidub
+cd omnidub
+cp .env.example .env
+# paste your MIMO_API_KEY into .env</code></pre>
+      </li>
+      <li>
+        <b>Run</b>
+<pre><code>docker compose up --build</code></pre>
+        <p>Open <a href="http://localhost:8080">http://localhost:8080</a>. Done.</p>
+      </li>
+    </ol>
+
+    <aside class="req">
+      <h4>Requirements</h4>
+      <ul>
+        <li>Docker + Docker Compose</li>
+        <li>A Xiaomi MiMo API key</li>
+        <li>~2 GB free disk for the image</li>
+        <li>That's it — no GPUs, no CUDA, no local models</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<!-- WHY MIMO -->
+<section id="mimo" class="section">
+  <div class="kicker">Why MiMo</div>
+  <h2>The only stack that could pull this off.</h2>
+
+  <div class="grid2">
+    <div class="card wide">
+      <h3>Four models, one API key, zero external ML</h3>
+      <p>Every arrow in the dataflow touches <code>api.xiaomimimo.com/v1</code>. No Whisper, no ElevenLabs, no pyannote. ASR, diarization, emotion classification, reasoning translation, and TTS — all MiMo.</p>
+      <div class="tags">
+        <span class="tag">mimo-v2.5</span>
+        <span class="tag">mimo-v2.5-pro</span>
+        <span class="tag">mimo-v2.5-tts</span>
+        <span class="tag">mimo-v2.5-tts-voiceclone</span>
+      </div>
+    </div>
+    <div class="card wide">
+      <h3>Emotion as a first-class TTS input</h3>
+      <p>MiMo-V2.5-TTS is the only major TTS that accepts natural-language delivery tags inline: <code>(whispering)The deadline is tomorrow.</code> We push classified emotion straight into the prompt — no post-hoc prosody hacks.</p>
+    </div>
+    <div class="card wide">
+      <h3>Reasoning model for dubbing translation</h3>
+      <p>Dubbing translation is a constraint satisfaction problem, not a pure NMT task. MiMo-V2.5-Pro can actually reason about <i>"your previous draft was 2.3s, the shot is 1.8s, drop the filler"</i> and self-correct.</p>
+    </div>
+    <div class="card wide">
+      <h3>Built-in voices for fallback</h3>
+      <p>Short clips that don't have enough clean audio for cloning gracefully degrade to the built-in <code>Chloe</code> voice (or any voice the user picks), so the pipeline never fails on edge cases.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-brand">
+    <span class="logo">◎</span>
+    <b>OmniDub</b>
+  </div>
+  <div class="foot-links">
+    <a href="https://github.com/kohkoh099-boop/omnidub" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://github.com/kohkoh099-boop/omnidub/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener">Architecture</a>
+    <a href="https://platform.xiaomimimo.com" target="_blank" rel="noopener">MiMo Platform</a>
+    <a href="https://100t.xiaomimimo.com" target="_blank" rel="noopener">100T Orbit</a>
+  </div>
+  <div class="foot-mini">
+    Open-source · MIT · Built on the Xiaomi MiMo-V2.5 family
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
